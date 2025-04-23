@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# React Template Base
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plantilla base para proyectos React con:
 
-Currently, two official plugins are available:
+- Vite + TypeScript
+- React Router
+- Toastify
+- Axios con Interceptors
+- i18n (multiidioma)
+- Layouts modulares
+- Context API
+- Formularios con `react-hook-form` + `yup`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Cómo usar esta plantilla
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Clona esta plantilla en un nuevo proyecto con [`degit`](https://github.com/KandeSoto/react-template):
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npx degit bitbucket:TU_USUARIO/NOMBRE_DEL_REPO nuevo-proyecto
+cd nuevo-proyecto
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> ⚠️ Asegúrate de que el repositorio sea público para que `degit` funcione.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 📂 Estructura recomendada
+
 ```
+src/
+├── @core/
+│   ├── layout/         # Estructura visual base (TopBar, AppLayout)
+│   └── components/     # Componentes reutilizables
+├── context/
+├── hooks/
+├── pages/
+├── router/
+├── apis/
+└── assets/
+```
+
+---
+
+## 🧪 ¿Qué incluye?
+
+- Protección de rutas (`RequireAuth`)
+- Interceptores Axios con loading global
+- Selectores de idioma con banderas
+- Layout separado de `AppLayout`
+- `ToastContainer` listo para notificaciones
